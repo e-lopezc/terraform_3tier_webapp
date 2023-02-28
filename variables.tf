@@ -42,5 +42,3 @@ variable "private_db_subnet_2_cidr" {
   description = "cidr block for private db subnet 2"
   default     = "10.0.6.0/24"
 }
-
-
