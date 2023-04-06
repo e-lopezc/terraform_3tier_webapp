@@ -45,22 +45,14 @@ resource "aws_route_table" "my_webapp_private_db_rt" {
 
 # private app subnets and route tables associations
 resource "aws_route_table_association" "private_app_rt_assoc_1" {
-  subnet_id      = aws_subnet.private_app_subnet_1.id
-  route_table_id = aws_route_table.my_webapp_private_app_rt.id
-}
-
-resource "aws_route_table_association" "private_app_rt_assoc_2" {
-  subnet_id      = aws_subnet.private_app_subnet_2.id
+  subnet_id      = aws_subnet.private_subnet_1.id
   route_table_id = aws_route_table.my_webapp_private_app_rt.id
 }
 
 # private db subnets and route tables associations
 resource "aws_route_table_association" "private_db_rt_assoc_1" {
-  subnet_id      = aws_subnet.private_db_subnet_1.id
+  subnet_id      = aws_subnet.private_subnet_2.id
   route_table_id = aws_route_table.my_webapp_private_db_rt.id
 }
 
-resource "aws_route_table_association" "private_db_rt_assoc_2" {
-  subnet_id      = aws_subnet.private_db_subnet_2.id
-  route_table_id = aws_route_table.my_webapp_private_db_rt.id
-}
+
